@@ -29,7 +29,7 @@ DB_PORT="${POSTGRES_PORT:=5432}"
 # Check if a custom host has been set, otherwise default to 'localhost'
 DB_HOST="${POSTGRES_HOST:=localhost}"
 
-# Allow to skip Docker if a dockerized Postgres database is already running
+# Allow to skip Podman if a Postgres database container is already running
 if [[ -z "${SKIP_PODMAN}" ]]
 then
     # Launch postgres using Podman
