@@ -78,23 +78,22 @@ jobs:
         with:
           components: clippy
       - uses: Swatinem/rust-cache@v2
-      with:
+        with:
           key: sqlx-${{ env.SQLX_VERSION }}
-      
+
       - name: install sqlx-cli
-        run:
-          cargo install sqlx-cli
-            --version=${{ env.SQLX_VERSION }}
-            --features ${{ env.SQLX_FEATURES }}
-            --no-default-features
-            --locked
-      
+        run: cargo install sqlx-cli
+          --version=${{ env.SQLX_VERSION }}
+          --features ${{ env.SQLX_FEATURES }}
+          --no-default-features
+          --locked
+
       - name: install postgresql-client
         run: sudo apt-get update && sudo apt-get -y install postgresql-client
-      
+
       - name: migrate database
         run: SKIP_PODMAN=true ./scripts/init_db.sh
-      
+
       - name: Linting
         run: cargo clippy -- -D warnings
 
@@ -120,18 +119,16 @@ jobs:
       - uses: Swatinem/rust-cache@v2
         with:
           key: sqlx-${{ env.SQLX_VERSION }}
-          
+
       - name: install sqlx-cli
-        run:
-          cargo install sqlx-cli
+        run: cargo install sqlx-cli
           --version=${{ env.SQLX_VERSION }}
           --features ${{ env.SQLX_FEATURES }}
           --no-default-features
           --locked
-          
+
       - name: migrate database
         run: SKIP_DOCKER=true ./scripts/init_db.sh
-        
+
       - name: generate code coverage
         run: cargo install cargo-tarpaulin && cargo tarpaulin --verbose --workspace
-
