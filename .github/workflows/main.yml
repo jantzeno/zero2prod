@@ -1,4 +1,4 @@
-name: Zero2Prod_Rust
+name: Main
 
 on: [push, pull_request]
 
@@ -49,7 +49,7 @@ jobs:
         run: cargo test
 
   fmt:
-    name: Rustfmt
+    name: rustfmt
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3

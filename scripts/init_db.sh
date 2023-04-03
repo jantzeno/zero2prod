@@ -1,4 +1,7 @@
 #!/usr/bin/env bash
+
+# Script must be run from the project root
+
 set -x
 set -eo pipefail
 
