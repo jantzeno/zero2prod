@@ -128,7 +128,7 @@ jobs:
           --locked
 
       - name: migrate database
-        run: SKIP_DOCKER=true ./scripts/init_db.sh
+        run: SKIP_PODMAN=true ./scripts/init_db.sh
 
       - name: generate code coverage
         run: cargo install cargo-tarpaulin && cargo tarpaulin --verbose --workspace
