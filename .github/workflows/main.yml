@@ -39,7 +39,7 @@ jobs:
           --no-default-features
           --locked
 
-      - nam: install postresql-client
+      - name: install postresql-client
         run: sudo apt-get update && sudo apt-get install -y postgresql-client
 
       - name: migrate database
