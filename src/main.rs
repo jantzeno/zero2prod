@@ -14,7 +14,7 @@ async fn main() -> Result<(), std::io::Error> {
     // Panic if configuration cannot be read
     let configuration = get_configuration().expect("failed to read configuration");
     let connection_pool =
-        PgPool::connect(&configuration.database.connection_string().expose_secret())
+        PgPool::connect(configuration.database.connection_string().expose_secret())
             .await
             .expect("failed to connect to database");
     let address = format!("127.0.0.1:{}", configuration.application_port);
