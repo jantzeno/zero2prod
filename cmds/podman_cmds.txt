@@ -1,0 +1,16 @@
+# Podman commands
+
+# List running containers
+podman ps
+
+# Stop container
+podman stop -l
+
+# List all containers
+podman ps -a
+
+# Remove container
+podman rm -l
+
+# Build sqlx-data.json file first
+podman build --tag zero2prod --file docker/app.Dockerfile .

@@ -1,0 +1,10 @@
+.env
+target/
+tests/
+Dockerfile
+*.Dockerfile
+scripts/
+migrations/
+.cargo/
+.github/
+.vscode/
