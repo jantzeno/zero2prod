@@ -23,13 +23,13 @@ fi
 
 set +a
 
-sh scripts/check_sqlx.sh
+sh scripts/1_check_sqlx.sh
 
 # Allow to skip Podman if a Postgres database container is already running
 if [[ -z "${SKIP_PODMAN}" ]]
 then
-    sh scripts/start_postgres.sh
+    sh scripts/2_start_postgres.sh
 fi
 
-sh scripts/ping_db.sh
-sh scripts/migrate.sh
+sh scripts/3_ping_db.sh
+sh scripts/4_migrate.sh
