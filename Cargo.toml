@@ -30,7 +30,7 @@ unicode-segmentation = "1"
 validator = "0.16"
 
 [dependencies.sqlx]
-version = "0.6"
+version = "~0.7"
 default-features = false
 features = [
     "runtime-tokio-rustls",
@@ -39,7 +39,6 @@ features = [
     "uuid",
     "chrono",
     "migrate",
-    "offline",
 ]
 
 [dev-dependencies]
